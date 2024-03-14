@@ -7,7 +7,7 @@ generate_sub: generate_sub.cpp
 	clang++ -o generate_sub generate_sub.cpp -std=c++14
 evaluate: evaluate.cpp utility.o
 	clang++ -o evaluate evaluate.cpp utility.o neuron.o -std=c++14
-utility.o: utility.cpp utility.h neuron.o
+utility.o: utility.cpp utility.hpp neuron.o
 	clang++ -c -o utility.o utility.cpp -std=c++14
-neuron.o: neuron.cpp neuron.h
+neuron.o: neuron.cpp neuron.hpp
 	clang++ -c -o neuron.o neuron.cpp -std=c++14

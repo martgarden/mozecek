@@ -1,4 +1,4 @@
-#include "utility.h"
+#include "utility.hpp"
 
 #include <fstream>
 
@@ -24,12 +24,12 @@ vector<vector<Neuron> > load(const string &file) {
                     nfile>>weight;
                     inputs[j] = weight;
                 }
-                network.back().at(i) = Neuron(bias, move(inputs));
+                network.back().at(i) = Neuron(bias, std::move(inputs));
             }
             prev_lay = size;
         }
     } while (not nfile.eof());
-    return move(network);
+    return std::move(network);
 }
 
 vector<double> loadInput(int size, const string &file) {
@@ -38,7 +38,7 @@ vector<double> loadInput(int size, const string &file) {
     for(auto &i: ret) {
         ifile>>i;
     }
-    return move(ret);
+    return std::move(ret);
 }
 
 void run(vector<vector<Neuron> > &network, vector<double> inputs) {

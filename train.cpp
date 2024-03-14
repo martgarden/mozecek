@@ -4,7 +4,7 @@
 #include <random>
 #include <algorithm>
 #include <chrono>
-#include "utility.h"
+#include "utility.hpp"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ vector<string> explode(const string& str, char delim)
     istringstream src(str);
     vector<string> ret;
     for (string buf; getline(src, buf, delim);)
-        ret.push_back(move(buf));
+        ret.push_back(std::move(buf));
     return ret;
 }
 

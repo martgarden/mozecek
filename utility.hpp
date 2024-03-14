@@ -1,7 +1,7 @@
 #ifndef __UTILITY_H
 #define __UTILITY_H
 
-#include "neuron.h"
+#include "neuron.hpp"
 #include <vector>
 
 typedef std::vector<std::vector<Neuron> > Network;
