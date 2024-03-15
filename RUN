@@ -2,3 +2,4 @@ make
 ./generate_sub network_in.neu
 ./train network_in.neu network_out.neu
 ./evaluate network_out.neu
+./results.pl
